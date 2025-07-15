@@ -8,13 +8,15 @@ const View = () => {
 
     )
 
-
     const fetchData=()=>{
         axios.get("http://18.144.111.41/view_all_students.php").then(
-            (response)=>{changeStudData(response.data)}
+            (response)=>{
+              changeStudData(response.data)
+            }
         ).catch()
     }
-    useEffect(()=>{fetchData()},{})
+
+    useEffect(()=>{fetchData()},[])
 
   return (
     <div  style={{
